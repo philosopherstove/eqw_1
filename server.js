@@ -241,7 +241,7 @@ app.func.config.routes = ()=>{
         };
     });
 
-    app.get('/test', async(req, res)=>{
+    exp.get('/test', async(req, res)=>{
         let pass = await app.func.rateLimiter(
             req,
             res,
