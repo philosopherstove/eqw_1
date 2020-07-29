@@ -189,7 +189,7 @@ app.func.config.routes = ()=>{
     exp.get('/steven', async(req, res)=>{
         console.log('STEVEN PAGE !');
         // res.send('Steven Page');
-        res.sendFile('/');
+        res.sendFile('/public/page/home/index.html');
 
         // let pass = await app.func.rateLimiter(
         //     req,
