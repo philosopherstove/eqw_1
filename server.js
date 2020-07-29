@@ -240,6 +240,23 @@ app.func.config.routes = ()=>{
             res.send('Request Limit Reached');
         };
     });
+
+    app.get('/test', async(req, res)=>{
+        let pass = await app.func.rateLimiter(
+            req,
+            res,
+            tokensGiven     = 0,
+            expiry_SEC      = app.setting.tokenExpiry_0_SEC,
+            regenRate_MS    = app.setting.tokenRegenRate_0_MS,
+            throttleRate_MS = app.setting.tokenThrottleRate_0_MS
+        );
+        if( pass){
+            res.send('Served');
+        }
+        else{
+            res.send('Request Limit Reached');
+        };
+    });
 };
 
 
