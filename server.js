@@ -102,11 +102,11 @@ app.func.config.express = ()=>{
     exp.use(express.json());
     /* Static File Paths */
     exp.use(express.static('public'));
-    exp.use(express.static('public/page'));
-    exp.use(express.static('public/page/home'));
-    exp.use(express.static('public/page/graph'));
-    exp.use(express.static('public/page/table'));
-    exp.use(express.static('public/page/map'));
+    // exp.use(express.static('public/page'));
+    // exp.use(express.static('public/page/home'));
+    // exp.use(express.static('public/page/graph'));
+    // exp.use(express.static('public/page/table'));
+    // exp.use(express.static('public/page/map'));
 };
 
 
@@ -222,6 +222,25 @@ app.func.config.routes = ()=>{
         };
     });
     /* Map */
+    // exp.get('/map', async(req, res)=>{
+    //     console.log('MAP PAGE !');
+    //     let pass = await app.func.rateLimiter(
+    //         req,
+    //         res,
+    //         tokensGiven     = 0,
+    //         expiry_SEC      = app.setting.tokenExpiry_0_SEC,
+    //         regenRate_MS    = app.setting.tokenRegenRate_0_MS,
+    //         throttleRate_MS = app.setting.tokenThrottleRate_0_MS
+    //     );
+    //     if( pass){
+    //         // res.sendFile('/public/page/map/index.html');
+    //         res.send('Hi');
+    //     }
+    //     else{
+    //         res.send('Request Limit Reached');
+    //     };
+    // });
+
     exp.get('/map', async(req, res)=>{
         console.log('MAP PAGE !');
         let pass = await app.func.rateLimiter(
@@ -233,8 +252,7 @@ app.func.config.routes = ()=>{
             throttleRate_MS = app.setting.tokenThrottleRate_0_MS
         );
         if( pass){
-            // res.sendFile('/public/page/map/index.html');
-            res.send('Hi');
+            res.send('Served MAP');
         }
         else{
             res.send('Request Limit Reached');
