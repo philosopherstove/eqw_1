@@ -176,7 +176,8 @@ app.func.config.routes = ()=>{
             throttleRate_MS = app.setting.tokenThrottleRate_0_MS
         );
         if( pass){
-            res.sendFile('/public/page/home/index.html');
+            // res.sendFile('/public/page/home/index.html');
+            res.send('Hi');
         }
         else{
             res.send('Request Limit Reached');
@@ -194,7 +195,8 @@ app.func.config.routes = ()=>{
             throttleRate_MS = app.setting.tokenThrottleRate_0_MS
         );
         if( pass){
-            res.sendFile('/public/page/graph/index.html');
+            // res.sendFile('/public/page/graph/index.html');
+            res.send('Hi');
         }
         else{
             res.send('Request Limit Reached');
@@ -212,7 +214,8 @@ app.func.config.routes = ()=>{
             throttleRate_MS = app.setting.tokenThrottleRate_0_MS
         );
         if( pass){
-            res.sendFile('/public/page/table/index.html');
+            // res.sendFile('/public/page/table/index.html');
+            res.send('Hi');
         }
         else{
             res.send('Request Limit Reached');
@@ -230,7 +233,8 @@ app.func.config.routes = ()=>{
             throttleRate_MS = app.setting.tokenThrottleRate_0_MS
         );
         if( pass){
-            res.sendFile('/public/page/map/index.html');
+            // res.sendFile('/public/page/map/index.html');
+            res.send('Hi');
         }
         else{
             res.send('Request Limit Reached');
