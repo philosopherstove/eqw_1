@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Graphs</title>
+        <link rel="stylesheet" href="graph.css">
+    </head>
+    <body>
+        <div class="chartsWrap">
+            <div class="chartsContainer">
+                <div class="chartsContainer_innerWrap">
+                    <canvas id="line_impressions" class="barGraph"></canvas>
+                    <canvas id="line_clicks" class="barGraph"></canvas>
+                </div>
+                <div class="chartsContainer_innerWrap">
+                    <canvas id="line_revenue" class="barGraph"></canvas>
+                    <canvas id="line_events" class="barGraph"></canvas>
+                </div>
+            </div>
+        </div>
+        <!-- Scripts -->
+        <!-- chart.js lib-->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <!-- app -->
+        <script src="../../app.js" charset="utf-8"></script>
+        <!-- graph -->
+        <script src="graph.js" charset="utf-8"></script>
+    </body>
+</html>

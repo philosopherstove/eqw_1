@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrap {
+    width: 802px;
+    margin: 0 auto;
+}
+
+.fixed {
+    position: fixed;
+    height: 88px;
+    background-color: white;
+    z-index: 1;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    height: 34px;
+    width: 200px;
+    border-radius: 3px;
+    box-shadow: 0.5px 0.5px 0.25px 0px rgba(0,0,0,0.2);
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.header {
+    height: 34px;
+    margin-top: 10px;
+    font-weight: bold;
+    line-height: 34px;
+    text-align: center;
+}
+
+.header li {
+    display: flex;
+}
+
+.header li p {
+    border: 1px solid;
+    width: 120px;
+}
+.header li p:nth-of-type(2){
+    width: 200px;
+}
+
+.table {
+    position: relative;
+    top: 50px;
+}
+
+.table li {
+    display: flex;
+}
+
+.table li p {
+    width: 120px;
+    border: 1px solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.table li p:nth-of-type(1),
+.table li p:nth-of-type(2) {
+    text-align: center;
+}
+.table li p:nth-of-type(2) {
+    width: 200px;
+}
+.table li p:nth-of-type(3),
+.table li p:nth-of-type(4),
+.table li p:nth-of-type(5),
+.table li p:nth-of-type(6) {
+    padding-right: 8px;
+    text-align: right;
+}
+
+.highlight {
+    color: blue;
+}

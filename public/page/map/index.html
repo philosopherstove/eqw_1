@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Map</title>
+        <link rel="stylesheet" href="map.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id='map' style='width: 800px; height: 500px;'></div>
+            <div class="rankControls">
+                <div class="legend">
+                    <p>Intensity Rank (1 is highest):</p>
+                    <div class="legendRow"><span>(1)</span><span></span></div>
+                    <div class="legendRow"><span>(2)</span><span></span></div>
+                    <div class="legendRow"><span>(3)</span><span></span></div>
+                    <div class="legendRow"><span>(4)</span><span></span></div>
+                </div>
+                <div class="buttonsWrap">
+                    <div class='button impressions'>Intensity by: Impressions</div>
+                    <div class='button clicks'>Intensity by: Clicks</div>
+                    <div class='button revenue'>Intensity by: Revenue</div>
+                    <div class='button events'>Intensity by: Events</div>
+                </div>
+            </div>
+        </div>
+        <!-- scripts -->
+        <!-- app -->
+        <script src="../../app.js" charset="utf-8"></script>
+        <!-- map -->
+        <script src="map.js" charset="utf-8"></script>
+        <!-- google maps -->
+        <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBevoU3KsKDUbBavvbKbawVzfrYExZj3uA"></script>
+    </body>
+</html>

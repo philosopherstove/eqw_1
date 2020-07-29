@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 802px;
+    margin: 30px auto 0;
+}
+
+#map {
+    width: 800px;
+    height: 500px;
+}
+
+.rankControls {
+    display: flex;
+    width: 800px;
+    border: 1px solid;
+}
+
+.legend {
+    margin-left: 200px;
+}
+
+.legendRow {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.legend
+> div
+> span:nth-child(2) {
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    border: 1px solid;
+}
+.legend
+> div:nth-child(2)
+> span:nth-child(2){
+    background-color: red;
+}
+.legend
+> div:nth-child(3)
+> span:nth-child(2){
+    background-color: orange;
+}
+.legend
+> div:nth-child(4)
+> span:nth-child(2){
+    background-color: yellow;
+}
+.legend
+> div:nth-child(5)
+> span:nth-child(2){
+    background-color: green;
+}
+
+.buttonsWrap {
+    margin-left: 20px;
+}
+
+.button {
+    width: 180px;
+    height: 34px;
+    margin: 4px;
+    text-align: center;
+    line-height: 34px;
+    border-radius: 3px;
+    box-shadow: 0.5px 0.5px 0.25px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+}
