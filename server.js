@@ -252,7 +252,8 @@ app.func.config.routes = ()=>{
             throttleRate_MS = app.setting.tokenThrottleRate_0_MS
         );
         if( pass){
-            res.send('Served MAP');
+            // res.send('Served MAP');
+            res.sendFile('/public/page/map/index.html');
         }
         else{
             res.send('Request Limit Reached');
