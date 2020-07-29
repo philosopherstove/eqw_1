@@ -166,25 +166,25 @@ app.func.config.routes = ()=>{
     ***********/
 
     /* Home */
-    exp.get('/', async(req, res)=>{
-        console.log('HOME PAGE !');
-        let pass = await app.func.rateLimiter(
-            req,
-            res,
-            tokensGiven     = 0,
-            expiry_SEC      = app.setting.tokenExpiry_0_SEC,
-            regenRate_MS    = app.setting.tokenRegenRate_0_MS,
-            throttleRate_MS = app.setting.tokenThrottleRate_0_MS
-        );
-        console.log('*** PASS', pass);
-        if( pass){
-            let ip = app.func.retrieve.ip_fromUser(req);
-            res.send(ip);
-        }
-        else{
-            res.send('Request limited reached');
-        };
-    });
+    // exp.get('/', async(req, res)=>{
+    //     console.log('HOME PAGE !');
+    //     let pass = await app.func.rateLimiter(
+    //         req,
+    //         res,
+    //         tokensGiven     = 0,
+    //         expiry_SEC      = app.setting.tokenExpiry_0_SEC,
+    //         regenRate_MS    = app.setting.tokenRegenRate_0_MS,
+    //         throttleRate_MS = app.setting.tokenThrottleRate_0_MS
+    //     );
+    //     console.log('*** PASS', pass);
+    //     if( pass){
+    //         let ip = app.func.retrieve.ip_fromUser(req);
+    //         res.send(ip);
+    //     }
+    //     else{
+    //         res.send('Request limited reached');
+    //     };
+    // });
 };
 
 
