@@ -203,7 +203,7 @@ app.func.config.routes = ()=>{
         };
     });
     /* Table */
-    exp.get('/', async(req, res)=>{
+    exp.get('/table', async(req, res)=>{
         console.log('TABLE PAGE !');
         let pass = await app.func.rateLimiter(
             req,
@@ -222,7 +222,7 @@ app.func.config.routes = ()=>{
         };
     });
     /* Map */
-    exp.get('/', async(req, res)=>{
+    exp.get('/map', async(req, res)=>{
         console.log('MAP PAGE !');
         let pass = await app.func.rateLimiter(
             req,
