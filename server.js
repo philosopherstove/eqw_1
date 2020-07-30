@@ -333,10 +333,10 @@ app.func.is.exceedTokenPurse = (req, objInRedis)=>{
         let updatedObj = await app.func.update.userTokenPurse(ip, objInRedis);
             updatedObj = JSON.parse(updatedObj)
         if( updatedObj.token <= 0){ // no more tokens => TRUE exceedTokenPurse
-            resolve([true, updatedObj]);
+            resolve( [true, updatedObj] );
         }
         else{
-            resolve([false, updatedObj);
+            resolve( [false, updatedObj] );
         };
     });
 };
