@@ -22,16 +22,16 @@ Because routes diff as far as what is requested at them, the rate limiter had to
 
 Next Adds:
 
+Graph Page:
+- include percentage pie-charts comparing revenue between the four POI.
+
+Map Page:
+- sharpen the intensity-indicator feature. Currently, the feature simply ranks the four POI high-to-low, giving each marker a different color. This means that I would need as many colors as I have POI. Instead, should have colors related to different ranges; so can constrain the amount of colors needed for use.
+
+Table Page:
+- fancier sort options for the table
+
+General:
 - designed UI
-
-- graph page include percentage pie charts comparing revenue between the four POI.
-
-- sharpen the intensity-indicator feature. Currently, the feature simply ranks the four POI high-to-low by changing the color of the markers to one of four colors, specified by a legend. Instead, should have the color of the markers related to a met range for amount.
-
-Put another way, currently, I would need as many colors as I have POI. This problem is due to using an individual ranking system. Instead, should have colors according to different ranges; so can constrain the amount of colors needed for use.
-
-- table get fancier sort options
-
 - consolidate naming conventions for server side functions
-
-- code that parses data on the front end into different buckets of data could be written in a more consistent format
+- the code that parses data on the front end into different buckets of data could be written in a more consistent format
