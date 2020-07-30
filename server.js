@@ -62,7 +62,7 @@ app.func.listen.port = ()=>{
 QUERY
 app.func.query.postgresPool = (req, res, next)=>{
 RATE LIMITER
-app.func.rateLimiter = (req, res)=>{
+app.func.rateLimiter = (req, res, tokensGiven, expiry_SEC, regenRate_MS, throttleRate_MS)=>{
 RETRIEVE
 app.func.retrieve.ip_fromUser = (req)=>{
 UPDATE
@@ -232,7 +232,6 @@ app.func.config.routes = ()=>{
             res.send('Request Limit Reached');
         };
     });
-
     /* TEST - RATE LIMITER */
     exp.get('/test', async(req, res)=>{
         let pass = await app.func.rateLimiter(
@@ -245,7 +244,7 @@ app.func.config.routes = ()=>{
         );
         if( pass[0]){
             let tokens = pass[1].tokens;
-            res.send('Served', tokens);
+            res.send(`Served. Tokens=${tokens}`);
         }
         else{
             res.send('Request Limit Reached');
