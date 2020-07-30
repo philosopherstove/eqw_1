@@ -165,25 +165,25 @@ app.func.config.routes = ()=>{
     Serve Pages
     ***********/
     /* Home */
-    exp.get('/', async(req, res)=>{
-        console.log('HOME PAGE !');
-        let pass = await app.func.rateLimiter(
-            req,
-            res,
-            tokensGiven     = 0,
-            expiry_SEC      = app.setting.tokenExpiry_0_SEC,
-            regenRate_MS    = app.setting.tokenRegenRate_0_MS,
-            throttleRate_MS = app.setting.tokenThrottleRate_0_MS
-        );
-        if( pass){
-            // res.sendFile('/public/page/home/index.html');
-            // res.send('Hi');
-            res.end();
-        }
-        else{
-            res.send('Request Limit Reached');
-        };
-    });
+    // exp.get('/', async(req, res)=>{
+    //     console.log('HOME PAGE !');
+    //     let pass = await app.func.rateLimiter(
+    //         req,
+    //         res,
+    //         tokensGiven     = 0,
+    //         expiry_SEC      = app.setting.tokenExpiry_0_SEC,
+    //         regenRate_MS    = app.setting.tokenRegenRate_0_MS,
+    //         throttleRate_MS = app.setting.tokenThrottleRate_0_MS
+    //     );
+    //     if( pass){
+    //         // res.sendFile('/public/page/home/index.html');
+    //         // res.send('Hi');
+    //         res.end();
+    //     }
+    //     else{
+    //         res.send('Request Limit Reached');
+    //     };
+    // });
     /* Graph */
     // exp.get('/graph', async(req, res)=>{
     //     console.log('GRAPH PAGE !');
@@ -242,42 +242,42 @@ app.func.config.routes = ()=>{
     //     };
     // });
 
-    exp.get('/map', async(req, res)=>{
-        console.log('MAP PAGE !');
-        let pass = await app.func.rateLimiter(
-            req,
-            res,
-            tokensGiven     = 0,
-            expiry_SEC      = app.setting.tokenExpiry_0_SEC,
-            regenRate_MS    = app.setting.tokenRegenRate_0_MS,
-            throttleRate_MS = app.setting.tokenThrottleRate_0_MS
-        );
-        if( pass){
-            // res.send('Served MAP');
-            // res.sendFile('/public/page/map/index.html');
-            res.end();
-        }
-        else{
-            res.send('Request Limit Reached');
-        };
-    });
+    // exp.get('/map', async(req, res)=>{
+    //     console.log('MAP PAGE !');
+    //     let pass = await app.func.rateLimiter(
+    //         req,
+    //         res,
+    //         tokensGiven     = 0,
+    //         expiry_SEC      = app.setting.tokenExpiry_0_SEC,
+    //         regenRate_MS    = app.setting.tokenRegenRate_0_MS,
+    //         throttleRate_MS = app.setting.tokenThrottleRate_0_MS
+    //     );
+    //     if( pass){
+    //         // res.send('Served MAP');
+    //         // res.sendFile('/public/page/map/index.html');
+    //         res.end();
+    //     }
+    //     else{
+    //         res.send('Request Limit Reached');
+    //     };
+    // });
 
-    exp.get('/test', async(req, res)=>{
-        let pass = await app.func.rateLimiter(
-            req,
-            res,
-            tokensGiven     = 0,
-            expiry_SEC      = app.setting.tokenExpiry_0_SEC,
-            regenRate_MS    = app.setting.tokenRegenRate_0_MS,
-            throttleRate_MS = app.setting.tokenThrottleRate_0_MS
-        );
-        if( pass){
-            res.send('Served');
-        }
-        else{
-            res.send('Request Limit Reached');
-        };
-    });
+    // exp.get('/test', async(req, res)=>{
+    //     let pass = await app.func.rateLimiter(
+    //         req,
+    //         res,
+    //         tokensGiven     = 0,
+    //         expiry_SEC      = app.setting.tokenExpiry_0_SEC,
+    //         regenRate_MS    = app.setting.tokenRegenRate_0_MS,
+    //         throttleRate_MS = app.setting.tokenThrottleRate_0_MS
+    //     );
+    //     if( pass){
+    //         res.send('Served');
+    //     }
+    //     else{
+    //         res.send('Request Limit Reached');
+    //     };
+    // });
 };
 
 
@@ -497,7 +497,7 @@ INIT
 app.func.init = ()=>{
     /* config */
     app.func.config.express();
-    app.func.config.routes();
+    // app.func.config.routes();
     app.func.config.queries();
     app.func.config.process();
     /* connect */
