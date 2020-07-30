@@ -243,8 +243,8 @@ app.func.config.routes = ()=>{
             throttleRate_MS = app.setting.tokenThrottleRate_0_MS
         );
         if( pass[0]){
-            let tokens = pass[1].tokens;
-            res.send(`Served. Tokens=${tokens}`);
+            let tokens = pass[1].token;
+            res.send(`Served. Token Purse = ${tokens}`);
         }
         else{
             res.send('Request Limit Reached');
@@ -401,7 +401,7 @@ app.func.rateLimiter = (req, res, tokensGiven, expiry_SEC, regenRate_MS, throttl
             let objInRedis = await app.func.is.obj_inRedis(req);
             if( objInRedis === false){
                 app.func.createSet.userTokenPurse(req);
-                resolve(true);
+                resolve( [true, null] );
                 return;
             }
             else{
