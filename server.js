@@ -177,7 +177,8 @@ app.func.config.routes = ()=>{
         );
         if( pass){
             // res.sendFile('/public/page/home/index.html');
-            res.send('Hi');
+            // res.send('Hi');
+            res.end();
         }
         else{
             res.send('Request Limit Reached');
@@ -252,8 +253,9 @@ app.func.config.routes = ()=>{
             throttleRate_MS = app.setting.tokenThrottleRate_0_MS
         );
         if( pass){
-            res.send('Served MAP');
+            // res.send('Served MAP');
             // res.sendFile('/public/page/map/index.html');
+            res.end();
         }
         else{
             res.send('Request Limit Reached');
