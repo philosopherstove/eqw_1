@@ -102,7 +102,7 @@ app.func.config.express = ()=>{
     exp.use(express.json());
     /* Static File Paths */
     exp.use(express.static('public'));
-    // exp.use(express.static('public/page'));
+    exp.use(express.static('public/page'));
     // exp.use(express.static('public/page/home'));
     // exp.use(express.static('public/page/graph'));
     // exp.use(express.static('public/page/table'));
