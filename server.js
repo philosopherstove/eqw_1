@@ -106,7 +106,7 @@ app.func.config.express = ()=>{
     // exp.use(express.static('public/page/home'));
     // exp.use(express.static('public/page/graph'));
     // exp.use(express.static('public/page/table'));
-    // exp.use(express.static('public/page/map'));
+    exp.use(express.static('public/page/map'));
 };
 
 
