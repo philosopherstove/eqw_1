@@ -496,7 +496,7 @@ INIT
 ****/
 app.func.init = ()=>{
     /* config */
-    app.func.config.express();
+    // app.func.config.express();
     // app.func.config.routes();
     app.func.config.queries();
     app.func.config.process();
