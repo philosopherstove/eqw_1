@@ -408,8 +408,7 @@ app.func.rateLimiter = (req, res, tokensGiven, expiry_SEC, regenRate_MS, throttl
             else{
                 let exceedThrottleLimit = await app.func.is.exceedThrottleLimit(objInRedis);
                 if( exceedThrottleLimit === true){ //=> NO SERVICE
-                    let updatedObj = exceedThrottleLimit[1];
-                    resolve( [false, updatedObj] );
+                    resolve( [false, null] );
                     console.log('EXCEED THOTTLE');
                     return
                 };
