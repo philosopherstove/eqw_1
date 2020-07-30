@@ -103,9 +103,9 @@ app.func.config.express = ()=>{
     /* Static File Paths */
     exp.use(express.static('public'));
     exp.use(express.static('public/page'));
-    // exp.use(express.static('public/page/home'));
-    // exp.use(express.static('public/page/graph'));
-    // exp.use(express.static('public/page/table'));
+    exp.use(express.static('public/page/home'));
+    exp.use(express.static('public/page/graph'));
+    exp.use(express.static('public/page/table'));
     exp.use(express.static('public/page/map'));
 };
 
@@ -252,8 +252,8 @@ app.func.config.routes = ()=>{
             throttleRate_MS = app.setting.tokenThrottleRate_0_MS
         );
         if( pass){
-            // res.send('Served MAP');
-            res.sendFile('/public/page/map/index.html');
+            res.send('Served MAP');
+            // res.sendFile('/public/page/map/index.html');
         }
         else{
             res.send('Request Limit Reached');
