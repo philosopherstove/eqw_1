@@ -165,119 +165,92 @@ app.func.config.routes = ()=>{
     Serve Pages
     ***********/
     /* Home */
-    // exp.get('/', async(req, res)=>{
-    //     console.log('HOME PAGE !');
-    //     let pass = await app.func.rateLimiter(
-    //         req,
-    //         res,
-    //         tokensGiven     = 0,
-    //         expiry_SEC      = app.setting.tokenExpiry_0_SEC,
-    //         regenRate_MS    = app.setting.tokenRegenRate_0_MS,
-    //         throttleRate_MS = app.setting.tokenThrottleRate_0_MS
-    //     );
-    //     if( pass){
-    //         // res.sendFile('/public/page/home/index.html');
-    //         // res.send('Hi');
-    //         res.end();
-    //     }
-    //     else{
-    //         res.send('Request Limit Reached');
-    //     };
-    // });
+    exp.get('/', async(req, res)=>{
+        let pass = await app.func.rateLimiter(
+            req,
+            res,
+            tokensGiven     = 0,
+            expiry_SEC      = app.setting.tokenExpiry_0_SEC,
+            regenRate_MS    = app.setting.tokenRegenRate_0_MS,
+            throttleRate_MS = app.setting.tokenThrottleRate_0_MS
+        );
+        if( pass[0]){
+            res.sendFile('/public/page/home/index.html');
+        }
+        else{
+            res.send('Request Limit Reached');
+        };
+    });
     /* Graph */
-    // exp.get('/graph', async(req, res)=>{
-    //     console.log('GRAPH PAGE !');
-    //     let pass = await app.func.rateLimiter(
-    //         req,
-    //         res,
-    //         tokensGiven     = 6,
-    //         expiry_SEC      = app.setting.tokenExpiry_0_SEC,
-    //         regenRate_MS    = app.setting.tokenRegenRate_0_MS,
-    //         throttleRate_MS = app.setting.tokenThrottleRate_0_MS
-    //     );
-    //     if( pass){
-    //         // res.sendFile('/public/page/graph/index.html');
-    //         res.send('Hi');
-    //     }
-    //     else{
-    //         res.send('Request Limit Reached');
-    //     };
-    // });
+    exp.get('/graph', async(req, res)=>{
+        let pass = await app.func.rateLimiter(
+            req,
+            res,
+            tokensGiven     = 6,
+            expiry_SEC      = app.setting.tokenExpiry_0_SEC,
+            regenRate_MS    = app.setting.tokenRegenRate_0_MS,
+            throttleRate_MS = app.setting.tokenThrottleRate_0_MS
+        );
+        if( pass[0]){
+            res.sendFile('/public/page/graph/index.html');
+        }
+        else{
+            res.send('Request Limit Reached');
+        };
+    });
     /* Table */
-    // exp.get('/table', async(req, res)=>{
-    //     console.log('TABLE PAGE !');
-    //     let pass = await app.func.rateLimiter(
-    //         req,
-    //         res,
-    //         tokensGiven     = 6,
-    //         expiry_SEC      = app.setting.tokenExpiry_0_SEC,
-    //         regenRate_MS    = app.setting.tokenRegenRate_0_MS,
-    //         throttleRate_MS = app.setting.tokenThrottleRate_0_MS
-    //     );
-    //     if( pass){
-    //         // res.sendFile('/public/page/table/index.html');
-    //         res.send('Hi');
-    //     }
-    //     else{
-    //         res.send('Request Limit Reached');
-    //     };
-    // });
+    exp.get('/table', async(req, res)=>{
+        let pass = await app.func.rateLimiter(
+            req,
+            res,
+            tokensGiven     = 6,
+            expiry_SEC      = app.setting.tokenExpiry_0_SEC,
+            regenRate_MS    = app.setting.tokenRegenRate_0_MS,
+            throttleRate_MS = app.setting.tokenThrottleRate_0_MS
+        );
+        if( pass[0]){
+            res.sendFile('/public/page/table/index.html');
+        }
+        else{
+            res.send('Request Limit Reached');
+        };
+    });
     /* Map */
-    // exp.get('/map', async(req, res)=>{
-    //     console.log('MAP PAGE !');
-    //     let pass = await app.func.rateLimiter(
-    //         req,
-    //         res,
-    //         tokensGiven     = 0,
-    //         expiry_SEC      = app.setting.tokenExpiry_0_SEC,
-    //         regenRate_MS    = app.setting.tokenRegenRate_0_MS,
-    //         throttleRate_MS = app.setting.tokenThrottleRate_0_MS
-    //     );
-    //     if( pass){
-    //         // res.sendFile('/public/page/map/index.html');
-    //         res.send('Hi');
-    //     }
-    //     else{
-    //         res.send('Request Limit Reached');
-    //     };
-    // });
+    exp.get('/map', async(req, res)=>{
+        let pass = await app.func.rateLimiter(
+            req,
+            res,
+            tokensGiven     = 0,
+            expiry_SEC      = app.setting.tokenExpiry_0_SEC,
+            regenRate_MS    = app.setting.tokenRegenRate_0_MS,
+            throttleRate_MS = app.setting.tokenThrottleRate_0_MS
+        );
+        if( pass[0]){
+            res.sendFile('/public/page/map/index.html');
+        }
+        else{
+            res.send('Request Limit Reached');
+        };
+    });
 
-    // exp.get('/map', async(req, res)=>{
-    //     console.log('MAP PAGE !');
-    //     let pass = await app.func.rateLimiter(
-    //         req,
-    //         res,
-    //         tokensGiven     = 0,
-    //         expiry_SEC      = app.setting.tokenExpiry_0_SEC,
-    //         regenRate_MS    = app.setting.tokenRegenRate_0_MS,
-    //         throttleRate_MS = app.setting.tokenThrottleRate_0_MS
-    //     );
-    //     if( pass){
-    //         // res.send('Served MAP');
-    //         // res.sendFile('/public/page/map/index.html');
-    //         res.end();
-    //     }
-    //     else{
-    //         res.send('Request Limit Reached');
-    //     };
-    // });
-
-    // exp.get('/test', async(req, res)=>{
-    //     let pass = await app.func.rateLimiter(
-    //         req,
-    //         res,
-    //         tokensGiven     = 0,
-    //         expiry_SEC      = app.setting.tokenExpiry_0_SEC,
-    //         regenRate_MS    = app.setting.tokenRegenRate_0_MS,
-    //         throttleRate_MS = app.setting.tokenThrottleRate_0_MS
-    //     );
-    //     if( pass){
-    //         res.send('Served');
-    //     }
-    //     else{
-    //         res.send('Request Limit Reached');
-    //     };
-    // });
+    /* TEST - RATE LIMITER */
+    exp.get('/test', async(req, res)=>{
+        let pass = await app.func.rateLimiter(
+            req,
+            res,
+            tokensGiven     = 0,
+            expiry_SEC      = app.setting.tokenExpiry_0_SEC,
+            regenRate_MS    = app.setting.tokenRegenRate_0_MS,
+            throttleRate_MS = app.setting.tokenThrottleRate_0_MS
+        );
+        if( pass[0]){
+            let tokens = pass[1].tokens;
+            res.send('Served', tokens);
+        }
+        else{
+            res.send('Request Limit Reached');
+        };
+    });
 };
 
 
@@ -360,10 +333,10 @@ app.func.is.exceedTokenPurse = (req, objInRedis)=>{
         let updatedObj = await app.func.update.userTokenPurse(ip, objInRedis);
             updatedObj = JSON.parse(updatedObj)
         if( updatedObj.token <= 0){ // no more tokens => TRUE exceedTokenPurse
-            resolve(true);
+            resolve([true, updatedObj]);
         }
         else{
-            resolve(false);
+            resolve([false, updatedObj);
         };
     });
 };
@@ -424,7 +397,6 @@ app.func.query.postgresPool = (req, res, next)=>{
 RATE LIMITER
 ************/
 app.func.rateLimiter = (req, res, tokensGiven, expiry_SEC, regenRate_MS, throttleRate_MS)=>{
-    console.log('INSIDE RATE LIMITER');
     return new Promise(async(resolve)=>{
         try{
             let objInRedis = await app.func.is.obj_inRedis(req);
@@ -436,17 +408,20 @@ app.func.rateLimiter = (req, res, tokensGiven, expiry_SEC, regenRate_MS, throttl
             else{
                 let exceedThrottleLimit = await app.func.is.exceedThrottleLimit(objInRedis);
                 if( exceedThrottleLimit === true){ //=> NO SERVICE
-                    resolve(false);
+                    let updatedObj = exceedThrottleLimit[1];
+                    resolve( [false, updatedObj] );
                     console.log('EXCEED THOTTLE');
                     return
                 };
                 let exceedRateLimit = await app.func.is.exceedTokenPurse(req, objInRedis);
-                if( exceedRateLimit === true){ //=> SEND LIMIT MSG
-                    resolve(false);
-                    console.log('EXCEED TOKEN');
+                if( exceedRateLimit[0] === true){ //=> SEND LIMIT MSG
+                    let updatedObj = exceedRateLimit[1];
+                    resolve( [false, updatedObj] );
+                    console.log('EMPTY TOKEN PURSE');
                     return;
                 };
-                resolve(true);
+                let updatedObj = exceedRateLimit[1];
+                resolve( [true, updatedObj] );
             };
         }
         catch(err){
