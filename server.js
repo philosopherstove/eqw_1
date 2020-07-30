@@ -80,7 +80,6 @@ app.func.calc.newTokenAmount = (obj)=>{
         let time_elapsed     = time_current - time_lastRequest;
         let tokensCredited   = Math.floor(time_elapsed / regenRate_MS) + tokensGiven;
         let newTokenAmount   = obj.token + tokensCredited - 1; // -1 for decr
-        console.log('NEW TOKEN AMOUNT', newTokenAmount);
         if( newTokenAmount > 10){
             newTokenAmount = 10;
         }
@@ -88,6 +87,7 @@ app.func.calc.newTokenAmount = (obj)=>{
         if( newTokenAmount < 0){
             newTokenAmount = 0;
         };
+        console.log('NEW TOKEN AMOUNT', newTokenAmount);
         resolve(newTokenAmount);
     });
 };
@@ -470,8 +470,8 @@ INIT
 ****/
 app.func.init = ()=>{
     /* config */
-    // app.func.config.express();
-    // app.func.config.routes();
+    app.func.config.express();
+    app.func.config.routes();
     app.func.config.queries();
     app.func.config.process();
     /* connect */
