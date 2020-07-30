@@ -12,7 +12,11 @@ Completed Tasks:
 
 Rate Limiting Techniques:
 
-- throttle: 1 req per
+The rate limiter uses individual throttling and a token purse to manage server response rates.
+
+Because routes diff as far as what is requested at them, the rate limiter had to have enough flexibility for a programmer to change a few parameters to scale the rate limiter's response as appropriate for the route.
+
+
 
 
 

@@ -243,7 +243,9 @@ app.func.config.routes = ()=>{
             throttleRate_MS = app.setting.tokenThrottleRate_0_MS
         );
         if( pass[0]){
-            let tokens = pass[1].token;
+            if( pass[1] !== null){
+                var tokens = pass[1].token;
+            }
             res.send(`Served. Token Purse = ${tokens}`);
         }
         else{
