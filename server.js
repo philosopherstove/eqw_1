@@ -246,11 +246,7 @@ app.func.config.routes = ()=>{
             if( pass[1] !== null){
                 var tokens = pass[1].token;
             }
-            res.send(
-                `served
-                ${app.func.retrieve.ip_fromUser(req)}
-                ${tokens}`
-            );
+            res.send(`${app.func.retrieve.ip_fromUser(req)} - ${tokens}`);
         }
         else{
             res.send('Request Limit Reached');
