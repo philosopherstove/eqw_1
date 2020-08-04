@@ -411,7 +411,7 @@ app.func.rateLimiter = (req, res, tokensGiven, expiry_SEC, regenRate_MS, throttl
         try{
             let objInRedis = await app.func.is.obj_inRedis(req);
             if( objInRedis === false){
-                app.func.createSet.userTokenPurse(req);
+                await app.func.createSet.userTokenPurse(req);
                 resolve( [true, null] );
                 return;
             }
