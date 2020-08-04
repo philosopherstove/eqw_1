@@ -243,9 +243,13 @@ app.func.config.routes = ()=>{
             throttleRate_MS = app.setting.tokenThrottleRate_0_MS
         );
         if( pass[0]){
-            // if( pass[1] !== null){
-                var tokens = pass[1].token;
-            // }
+            let tokens = null;
+            if( pass[1] === null){
+                tokens = 10;
+            }
+            else{
+                tokens = pass[1].token;
+            };
             res.send(`${app.func.retrieve.ip_fromUser(req)} - ${tokens}`);
         }
         else{
