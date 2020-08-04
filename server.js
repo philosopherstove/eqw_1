@@ -31,7 +31,8 @@ app.setting                        = {};
 app.setting.db_redisClient         = null;
 app.setting.db_postgresPool        = null;
 app.setting.tokenExpiry_0_SEC      = 60;
-app.setting.tokenRegenRate_0_MS    = 1000;
+// app.setting.tokenRegenRate_0_MS    = 1000;
+app.setting.tokenRegenRate_0_MS    = 1500;
 app.setting.tokenThrottleRate_0_MS = 500;
 
 
