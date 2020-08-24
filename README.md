@@ -1,4 +1,4 @@
-###Completed Tasks:
+### Completed Tasks:
 
 - graphs for different metrics comparing the four Points of Interest (POI).
 
@@ -10,7 +10,7 @@
 
 
 
-###Rate Limiting Techniques:
+### Rate Limiting Techniques:
 
 The rate limiter uses individual throttling and a token purse to manage server response rates.
 
@@ -41,7 +41,7 @@ app.func.rateLimiter = (
 
 
 
-###Next Adds:
+### Next Adds:
 
 **Graph Page:**
 - include percentage pie-charts comparing revenue between the four POI.
