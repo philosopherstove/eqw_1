@@ -166,77 +166,76 @@ app.func.config.routes = ()=>{
     Serve Pages
     ***********/
     /* Home */
-    // exp.get('/', async(req, res)=>{
-    //     let pass = await app.func.rateLimiter(
-    //         req,
-    //         res,
-    //         tokensGiven     = 0,
-    //         expiry_SEC      = app.setting.tokenExpiry_0_SEC,
-    //         regenRate_MS    = app.setting.tokenRegenRate_0_MS,
-    //         throttleRate_MS = app.setting.tokenThrottleRate_0_MS
-    //     );
-    //     if( pass[0]){
-    //         // res.sendFile('/public/page/home/index.html');
-    //         res.send('/');
-    //     }
-    //     else{
-    //         res.send('Request Limit Reached');
-    //     };
-    // });
+    exp.get('/', async(req, res)=>{
+        let pass = await app.func.rateLimiter(
+            req,
+            res,
+            tokensGiven     = 0,
+            expiry_SEC      = app.setting.tokenExpiry_0_SEC,
+            regenRate_MS    = app.setting.tokenRegenRate_0_MS,
+            throttleRate_MS = app.setting.tokenThrottleRate_0_MS
+        );
+        if( pass[0]){
+            res.sendFile('/public/page/home/index.html');
+        }
+        else{
+            res.send('Request Limit Reached');
+        };
+    });
     /* Graph */
-    // exp.get('/graph', async(req, res)=>{
-    //     let pass = await app.func.rateLimiter(
-    //         req,
-    //         res,
-    //         tokensGiven     = 6,
-    //         expiry_SEC      = app.setting.tokenExpiry_0_SEC,
-    //         regenRate_MS    = app.setting.tokenRegenRate_0_MS,
-    //         throttleRate_MS = app.setting.tokenThrottleRate_0_MS
-    //     );
-    //     if( pass[0]){
-    //         // res.sendFile('/public/page/graph/index.html');
-    //         res.send('/graph');
-    //     }
-    //     else{
-    //         res.send('Request Limit Reached');
-    //     };
-    // });
+    exp.get('/graph', async(req, res)=>{
+        let pass = await app.func.rateLimiter(
+            req,
+            res,
+            tokensGiven     = 6,
+            expiry_SEC      = app.setting.tokenExpiry_0_SEC,
+            regenRate_MS    = app.setting.tokenRegenRate_0_MS,
+            throttleRate_MS = app.setting.tokenThrottleRate_0_MS
+        );
+        if( pass[0]){
+            res.sendFile('/public/page/graph/index.html');
+            // res.send('/graph');
+        }
+        else{
+            res.send('Request Limit Reached');
+        };
+    });
     /* Table */
-    // exp.get('/table', async(req, res)=>{
-    //     let pass = await app.func.rateLimiter(
-    //         req,
-    //         res,
-    //         tokensGiven     = 6,
-    //         expiry_SEC      = app.setting.tokenExpiry_0_SEC,
-    //         regenRate_MS    = app.setting.tokenRegenRate_0_MS,
-    //         throttleRate_MS = app.setting.tokenThrottleRate_0_MS
-    //     );
-    //     if( pass[0]){
-    //         // res.sendFile('/public/page/table/index.html');
-    //         res.send('/table');
-    //     }
-    //     else{
-    //         res.send('Request Limit Reached');
-    //     };
-    // });
+    exp.get('/table', async(req, res)=>{
+        let pass = await app.func.rateLimiter(
+            req,
+            res,
+            tokensGiven     = 6,
+            expiry_SEC      = app.setting.tokenExpiry_0_SEC,
+            regenRate_MS    = app.setting.tokenRegenRate_0_MS,
+            throttleRate_MS = app.setting.tokenThrottleRate_0_MS
+        );
+        if( pass[0]){
+            res.sendFile('/public/page/table/index.html');
+            // res.send('/table');
+        }
+        else{
+            res.send('Request Limit Reached');
+        };
+    });
     /* Map */
-    // exp.get('/map', async(req, res)=>{
-    //     let pass = await app.func.rateLimiter(
-    //         req,
-    //         res,
-    //         tokensGiven     = 0,
-    //         expiry_SEC      = app.setting.tokenExpiry_0_SEC,
-    //         regenRate_MS    = app.setting.tokenRegenRate_0_MS,
-    //         throttleRate_MS = app.setting.tokenThrottleRate_0_MS
-    //     );
-    //     if( pass[0]){
-    //         // res.sendFile('/public/page/map/index.html');
-    //         res.send('/map');
-    //     }
-    //     else{
-    //         res.send('Request Limit Reached');
-    //     };
-    // });
+    exp.get('/map', async(req, res)=>{
+        let pass = await app.func.rateLimiter(
+            req,
+            res,
+            tokensGiven     = 0,
+            expiry_SEC      = app.setting.tokenExpiry_0_SEC,
+            regenRate_MS    = app.setting.tokenRegenRate_0_MS,
+            throttleRate_MS = app.setting.tokenThrottleRate_0_MS
+        );
+        if( pass[0]){
+            res.sendFile('/public/page/map/index.html');
+            // res.send('/map');
+        }
+        else{
+            res.send('Request Limit Reached');
+        };
+    });
     /* TEST - RATE LIMITER */
     exp.get('/test', async(req, res)=>{
         let pass = await app.func.rateLimiter(
